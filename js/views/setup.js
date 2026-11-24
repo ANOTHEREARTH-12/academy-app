@@ -8,7 +8,8 @@
       prefill = prefill || {};
       root.innerHTML = `
         <section class="setup card">
-          <h1><span class="logo" aria-hidden="true">🏸</span> Court Manager</h1>
+          <img class="hero" src="img/hero.svg" alt="" width="480" height="190">
+          <h1><img class="logo-img" src="img/shuttle.svg" alt="" width="30" height="30"> Court Manager</h1>
           <p>Connect this device to the academy's <strong>private</strong> data repository on GitHub.
              You only do this once per device.</p>
           <form data-form novalidate autocomplete="off">

@@ -5,26 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#070e1d">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src https://api.github.com; base-uri 'none'; form-action 'none'">
   <title>Court Manager</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏸</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="img/shuttle.svg">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <!-- line icons -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="3.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="M8 14.5h2.5M13.5 14.5H16M8 17.5h2.5"/></symbol>
+    <symbol id="i-member" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="15" rx="3.5"/><circle cx="9" cy="10.6" r="2.4"/><path d="M5.6 16.4c.8-1.7 1.9-2.5 3.4-2.5s2.6.8 3.4 2.5M15 9.8h3.5M15 13.2h2.5"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3.2"/><path d="M3.5 19c.9-3 3-4.6 5.5-4.6s4.6 1.6 5.5 4.6"/><path d="M15.5 5.6a3 3 0 0 1 0 5.8M17.6 14.6c1.5.6 2.4 2 2.9 4.4"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M4 8V7a2.5 2.5 0 0 1 2.5-2.5H17V8"/><rect x="4" y="8" width="16.5" height="11.5" rx="3"/><path d="M16 13.8h4.5"/></symbol>
+    <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3.5h12v17l-2.4-1.5-2.4 1.5-2.4-1.5-2.4 1.5L6 19z"/><path d="M9 8h6M9 11.5h6M9 15h3.5"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 19.5h16M5 15.5l4.5-4.5 3.5 3 6-6.5"/><path d="M15 7.5h4v4"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9M4 12h12M20 12h0"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/><circle cx="18" cy="12" r="2"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3"/><path d="M19.5 4.5v4h-4"/></symbol>
+  </svg>
+
   <header class="topbar" id="topbar" hidden>
-    <div class="brand"><span class="logo" aria-hidden="true">🏸</span><span id="brandName">Court Manager</span></div>
+    <div class="brand"><img class="logo-img" src="img/shuttle.svg" alt="" width="38" height="38"><span id="brandName">Court Manager</span></div>
     <nav class="tabs" id="tabs" aria-label="Main">
-      <a href="#bookings" data-view="bookings">Bookings</a>
-      <a href="#members" data-view="members">Members</a>
-      <a href="#customers" data-view="customers">Customers</a>
-      <a href="#collections" data-view="collections">Collections</a>
-      <a href="#expenses" data-view="expenses">Expenses</a>
-      <a href="#reports" data-view="reports">Reports</a>
-      <a href="#settings" data-view="settings">Settings</a>
+      <a href="#bookings" data-view="bookings"><svg class="ico" aria-hidden="true"><use href="#i-cal"/></svg><span>Bookings</span></a>
+      <a href="#members" data-view="members"><svg class="ico" aria-hidden="true"><use href="#i-member"/></svg><span>Members</span></a>
+      <a href="#customers" data-view="customers"><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg><span>Customers</span></a>
+      <a href="#collections" data-view="collections"><svg class="ico" aria-hidden="true"><use href="#i-wallet"/></svg><span>Collections</span></a>
+      <a href="#expenses" data-view="expenses"><svg class="ico" aria-hidden="true"><use href="#i-receipt"/></svg><span>Expenses</span></a>
+      <a href="#reports" data-view="reports"><svg class="ico" aria-hidden="true"><use href="#i-chart"/></svg><span>Reports</span></a>
+      <a href="#settings" data-view="settings"><svg class="ico" aria-hidden="true"><use href="#i-sliders"/></svg><span>Settings</span></a>
     </nav>
     <div class="conn">
       <span id="connBadge" class="badge"></span>
-      <button type="button" id="refreshBtn" class="btn ghost icon" title="Load the latest data" aria-label="Load the latest data">↻</button>
+      <button type="button" id="refreshBtn" class="btn ghost icon" title="Load the latest data" aria-label="Load the latest data"><svg class="ico" aria-hidden="true"><use href="#i-refresh"/></svg></button>
     </div>
   </header>
 

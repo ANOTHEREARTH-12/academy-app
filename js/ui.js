@@ -53,8 +53,12 @@
   };
 
   // Bar widths are set from JS because the page's security policy blocks inline style attributes.
+  // Two animation frames so the bars grow smoothly from zero.
   ui.applyBars = (root) => {
-    root.querySelectorAll('[data-w]').forEach((e) => { e.style.width = Math.max(0, Math.min(100, Number(e.dataset.w) || 0)) + '%'; });
+    const els = root.querySelectorAll('[data-w]');
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      els.forEach((e) => { e.style.width = Math.max(0, Math.min(100, Number(e.dataset.w) || 0)) + '%'; });
+    }));
   };
 
   App.ui = ui;
